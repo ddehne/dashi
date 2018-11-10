@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import Dashboard from './components/Dashboard'
+import Tile from './Tile'
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import './App.css';
+import './Dashboard.css';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    maxWidth: 1200,
     padding: theme.spacing.unit * 2,
+    margin: 'auto'
   },
   image: {
     width: 128,
@@ -22,15 +24,27 @@ const styles = theme => ({
 });
 
 
-class App extends Component {
+class Dashboard extends Component {
   
   render() {
     const { classes } = this.props;
 
     return (
-      <Dashboard />
+      <Grid className={classes.root} container spacing={24}>
+        <Grid item xs={12}>
+          <Tile />
+        </Grid>
+
+        <Grid item xs={6}>
+          <Tile />
+        </Grid>
+        
+        <Grid item xs={6}>
+          <Tile />
+        </Grid>
+      </Grid>
     );
   }
 }
 
-export default withStyles(styles)(App);
+export default withStyles(styles)(Dashboard);
