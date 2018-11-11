@@ -37,7 +37,7 @@ class NewsTile extends Component {
 
     loadNewsData() {
         let self = this;
-        axios.get('https://newsapi.org/v2/top-headlines?sources=associated-press&apiKey=11111')
+        axios.get('https://newsapi.org/v2/top-headlines?sources=associated-press&apiKey=1111')
         .then(function (response) {
             console.log(response);
             self.setState({newsData: response.data})
@@ -51,20 +51,29 @@ class NewsTile extends Component {
       const { classes } = this.props;
         return (
           <Grid container spacing={16}>
-            <Grid spacing={16} item>
-              <img className={classes.image} src={this.state.newsData.articles[0].urlToImage } />
-            </Grid>
-            <Grid item>
-                <Typography variant="headline">{this.state.newsData.articles[0].title}</Typography>
-                <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="subtitle1">
-                    {this.state.newsData.articles[0].source.name}
-                  </Typography>
-                  <Typography gutterBottom>{this.state.newsData.articles[0].description}</Typography>
-                  <Typography color="textSecondary"><a href={this.state.newsData.articles[0].url}>Read More...</a></Typography>
+            <Grid xs={6}>
+              <Grid spacing={16} item>
+                <img className={classes.image} src={this.state.newsData.articles[0].urlToImage || 'https://icon-locator.herokuapp.com/icon?url=https://apnews.com/&size=70..120..200' } />
+              </Grid>
+              <Grid item>
+                  <Typography variant="headline">{this.state.newsData.articles[0].title}</Typography>
+                  <Grid item xs container direction="column" spacing={16}>
+                  <Grid item xs>
+                    <Typography gutterBottom variant="subtitle1">
+                      {this.state.newsData.articles[0].source.name}
+                    </Typography>
+                    <Typography gutterBottom>{this.state.newsData.articles[0].description}</Typography>
+                    <Typography color="textSecondary"><a href={this.state.newsData.articles[0].url}>Read More...</a></Typography>
+                  </Grid>
                 </Grid>
               </Grid>
+            </Grid>
+            <Grid xs={6}>
+              <Grid><a href={this.state.newsData.articles[1].url}>{this.state.newsData.articles[1].title}</a></Grid>  
+              <Grid><a href={this.state.newsData.articles[2].url}>{this.state.newsData.articles[2].title}</a></Grid>  
+              <Grid><a href={this.state.newsData.articles[3].url}>{this.state.newsData.articles[3].title}</a></Grid>  
+              <Grid><a href={this.state.newsData.articles[4].url}>{this.state.newsData.articles[4].title}</a></Grid>  
+              <Grid><a href={this.state.newsData.articles[5].url}>{this.state.newsData.articles[5].title}</a></Grid>  
             </Grid>
           </Grid>
           )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WeatherTile from './WeatherTile';
+import ForecastTile from './ForecastTile';
 import NewsTile from './NewsTile';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
@@ -41,7 +42,7 @@ class Dashboard extends Component {
         </Grid>
         
         <Grid item xs={6}>
-          <WeatherTile />
+          <ForecastTile />
         </Grid>
       </Grid>
     );

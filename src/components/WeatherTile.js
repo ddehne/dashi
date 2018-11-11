@@ -45,15 +45,6 @@ class WeatherTile extends Component {
         .catch(function (error) {
             console.log(error);
         });
-
-        axios.get('https://api.openweathermap.org/data/2.5/forecast?q=Minneapolis&units=imperial&APPID=11111')
-        .then(function (response) {
-            console.log(response);
-            self.setState({forecastData: response.data})
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
     }
 
     renderWeatherData() {
