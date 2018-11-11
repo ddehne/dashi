@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Tile.css';
+import './WeatherTile.css';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -23,7 +23,7 @@ const styles = theme => ({
     },
   });
 
-class Tile extends Component {
+class WeatherTile extends Component {
 
     constructor(props) {
         super(props);
@@ -90,4 +90,4 @@ class Tile extends Component {
     }
 }
 
-export default withStyles(styles)(Tile);
+export default withStyles(styles)(WeatherTile);

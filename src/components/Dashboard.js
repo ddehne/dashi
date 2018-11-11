@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Tile from './Tile'
+import WeatherTile from './WeatherTile';
+import NewsTile from './NewsTile';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import './Dashboard.css';
@@ -32,15 +33,15 @@ class Dashboard extends Component {
     return (
       <Grid className={classes.root} container spacing={24}>
         <Grid item xs={12}>
-          <Tile />
+          <NewsTile />
         </Grid>
 
         <Grid item xs={6}>
-          <Tile />
+          <WeatherTile />
         </Grid>
         
         <Grid item xs={6}>
-          <Tile />
+          <WeatherTile />
         </Grid>
       </Grid>
     );
